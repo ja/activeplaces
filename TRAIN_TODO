@@ -1,0 +1,9 @@
+# There are aleady some sites that we don't have site-details for
+select count(*) from sites where date(created_at) = '2009-03-07';
+-- 119
+
+# Run bin/create-sites-from-search-results.rb in order to create any remaining sites from the 400(ish) search results that haven't yet been parsed.
+
+# Run bin/download-site-details.rb (double check that the condition that we use to retrieve the relevant sites is correct, i.e. it's checking for sites created on 2009-03-07)
+
+# Re-run whatever I might have come up with to create a very crappy site frm this data
