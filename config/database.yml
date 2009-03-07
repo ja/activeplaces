@@ -1,0 +1,14 @@
+development:
+  adapter: mysql
+  database: activeplaces_development
+  user: root
+
+test:
+  adapter: mysql
+  database: activeplaces_test
+  user: root
+
+production:
+  adapter: mysql
+  database: activeplaces_production
+  user: root

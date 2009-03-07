@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+require 'singleton'
+
+class Gitster
+  include Singleton
+  
+  def initialize
+    @created_flags = []
+    @repositories = []
+  end
+  
+  def add_repository(repo)
+    return unless git_repo?(repo)
+    create_flag_unless_it_already_exists_for(repo)
+    @repositories << File.basename(repo)
+  end
+  
+  def serve(dir = Dir.pwd)
+    if @repositories.empty?
+      raise "No repositories to serve"
+    end
+    cmd = "git daemon --base-path=#{dir}"
+    puts "Serving: #{@repositories.join(", ")}"
+    `#{cmd}`
+  end
+  
+  def cleanup
+    @created_flags.each do |flag|
+      File.delete(flag)
+    end
+  end
+  
+  private
+  
+  def git_repo?(dir)
+    File.exist?(File.join(dir, ".git"))
+  end
+  
+  def create_flag_unless_it_already_exists_for(repo)
+    flag = File.join(repo, ".git", "git-daemon-export-ok")
+    unless File.exist?(flag)
+      FileUtils.touch(flag)
+      @created_flags << flag
+    end
+  end
+end
+
+gitster = Gitster.instance
+
+Signal.trap('INT') do
+  puts "Cleaning up"
+  gitster.cleanup
+  exit 0
+end
+
+if ARGV.any?
+  ARGV.each { |repo| gitster.add_repository(File.join(Dir.pwd, repo)) }
+  gitster.serve
+else
+  gitster.add_repository(Dir.pwd)
+  gitster.serve(File.expand_path(File.join(Dir.pwd, "..")))
+end

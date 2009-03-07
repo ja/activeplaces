@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1450/trunk/scratch/activeplaces/db/migrate
+END
+20090301182816_create_sites.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1455/trunk/scratch/activeplaces/db/migrate/20090301182816_create_sites.rb
+END
+20090301175320_create_facility_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1450/trunk/scratch/activeplaces/db/migrate/20090301175320_create_facility_types.rb
+END

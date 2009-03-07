@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1445/trunk/scratch/activeplaces/script
+END
+console
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1445/trunk/scratch/activeplaces/script/console
+END
+server
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1445/trunk/scratch/activeplaces/script/server
+END
+dbconsole
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1445/trunk/scratch/activeplaces/script/dbconsole
+END
+destroy
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1445/trunk/scratch/activeplaces/script/destroy
+END
+runner
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1445/trunk/scratch/activeplaces/script/runner
+END
+about
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1445/trunk/scratch/activeplaces/script/about
+END
+generate
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1445/trunk/scratch/activeplaces/script/generate
+END
+plugin
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1445/trunk/scratch/activeplaces/script/plugin
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1451/trunk/scratch/activeplaces/bin
+END
+active_places_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1483/trunk/scratch/activeplaces/bin/active_places_helper.rb
+END
+NOTES
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1456/trunk/scratch/activeplaces/bin/NOTES
+END
+create-facility-types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1451/trunk/scratch/activeplaces/bin/create-facility-types.rb
+END
+extract-data-from-site-overview.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1458/trunk/scratch/activeplaces/bin/extract-data-from-site-overview.rb
+END
+download-search-results.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1485/trunk/scratch/activeplaces/bin/download-search-results.rb
+END
+download-search-form.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1451/trunk/scratch/activeplaces/bin/download-search-form.rb
+END
+create-sites-from-search-results.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1489/trunk/scratch/activeplaces/bin/create-sites-from-search-results.rb
+END
+download-site-details.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1486/trunk/scratch/activeplaces/bin/download-site-details.rb
+END

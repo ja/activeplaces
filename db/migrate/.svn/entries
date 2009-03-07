@@ -1,0 +1,40 @@
+8
+
+dir
+1450
+https://chrisroos.googlecode.com/svn/trunk/scratch/activeplaces/db/migrate
+https://chrisroos.googlecode.com/svn
+
+
+
+2009-03-01T17:58:42.134187Z
+1450
+chrisjroos
+
+
+svn:special svn:externals svn:needs-lock
+
+20090301182816_create_sites.rb
+file
+1455
+
+
+
+2009-03-01T18:29:20.000000Z
+429cda9f2cb02fa80b48015878e74496
+2009-03-01T18:37:32.058571Z
+1455
+chrisjroos
+
+20090301175320_create_facility_types.rb
+file
+
+
+
+
+2009-03-01T17:53:52.000000Z
+0bf311a310961e5b4c10b5a21d95e918
+2009-03-01T17:58:42.134187Z
+1450
+chrisjroos
+
