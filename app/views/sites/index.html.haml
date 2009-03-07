@@ -2,17 +2,17 @@
   :javascript
     $(function() { new Map("main-map", {
         mapCenter: [#{@position.lat}, #{@position.lng}],
-        locations: #{@locations.to_json} 
+        locations: #{@sites.to_json} 
        });
      });
 
 #mapping
   %form.search{:action => "#"}
-    %input{:type => "text", :size => "60", :name => "address", :value => @address_query}
+    %input{:type => "text", :size => "60", :name => "origin", :value => @origin}
     %input{:type => "submit", :value => "Take me there!"}
   #main-map
 
 - content_for :secondary do
   %ul#locations
-    - @locations.each do |location|
-      %li= link_to location.name, location
+    - @sites.each do |site|
+      %li= link_to site.name, location
