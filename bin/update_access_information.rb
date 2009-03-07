@@ -9,6 +9,8 @@ if ARGV.empty?
   exit(-1)
 end
 
+$types = {} # cache to avoid loading FacilityTypes multiple times.
+
 files = Dir[File.join(ARGV[0], "site-*-*.html")]
 files = files.select { |f| File.basename(f) > "site-#{ARGV[1]}" } if ARGV[1]
 
@@ -20,11 +22,15 @@ files.each do |file|
   html = File.read(file)
   doc = Hpricot(html)
   
+  facility_id = (doc/".facilityID").first.innerHTML.scan(/\d+$/)[0]
   access = ((doc/"#siteInformation a").select { |e| e.innerHTML =~ /Access Policy/ }.first.following_siblings/".site").first.innerHTML
   is_public = access == "Pay and Play"
-   
+  
+  facility_type = $types[type] ||= FacilityType.find_by_name(type.titleize)
+  
   site = Site.find(id)
-  site.facilities.kind(type.titleize).each { |f| f.update_attributes(:public => is_public) }
+  facility = site.facilities.build(:facility_type => facility_type, :public => is_public) { |f| f.id = facility_id }
+  facility.save!
 
-  puts "#{id} [#{type}] - #{access}"
+  puts "#{id} [#{facility_type.name}] - #{access}"
 end
