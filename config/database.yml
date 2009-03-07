@@ -1,14 +1,14 @@
 development:
   adapter: mysql
   database: activeplaces_development
-  user: root
+  username: root
 
 test:
   adapter: mysql
   database: activeplaces_test
-  user: root
+  username: root
 
 production:
   adapter: mysql
   database: activeplaces_production
-  user: root
+  username: root
