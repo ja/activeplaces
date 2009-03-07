@@ -9,17 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090307090005) do
+ActiveRecord::Schema.define(:version => 20090307115633) do
+
+  create_table "facilities", :force => true do |t|
+    t.integer "site_id"
+    t.integer "facility_type_id"
+    t.boolean "public"
+  end
 
   create_table "facility_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "facility_types_sites", :id => false, :force => true do |t|
-    t.integer "site_id"
-    t.integer "facility_type_id"
   end
 
   create_table "sites", :force => true do |t|
