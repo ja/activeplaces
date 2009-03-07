@@ -1,5 +1,6 @@
 data
 public/site-details
+config/database.yml
 log/*
 tmp/*
 .svn
