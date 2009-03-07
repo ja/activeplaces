@@ -14,10 +14,24 @@
       
 %h1= @site.title
 
-%h2 Facilities
-%ul
-  - @site.facilities.each do |facility|
-    %li= facility.facility_type.name  
+- if @site.facilities.public.any?
+  %h2 Public Facilities
+  %ul
+    - @site.facilities.public.each do |facility|
+      %li
+        = facility.facility_type.name
+        - if facility.facility_sub_type
+          == (#{facility.facility_sub_type.name})
+
+- if @site.facilities.private.any?
+  %h2 Private Facilities
+  %ul
+    - @site.facilities.private.each do |facility|
+      %li
+        = facility.facility_type.name
+        - if facility.facility_sub_type
+          == (#{facility.facility_sub_type.name})
+      
 
 %h3 Details
 %h4 Telephone

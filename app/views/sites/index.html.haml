@@ -9,6 +9,9 @@
 #mapping
   %form.search{:action => "#"}
     %input{:type => "text", :size => "60", :name => "search", :value => @search}
+    %input{:type => "checkbox", :name => "public", :checked => @public, :value => 'true'}
+    %label{:for => "public"}
+      Public only
     %input{:type => "submit", :value => "Take me there!"}
   #main-map
 

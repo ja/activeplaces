@@ -1,6 +1,7 @@
 class SitesController < ApplicationController
   def index
     @search = params['search'] || 'London'
+    @public = params['public'] == 'true' || false
     @origin = GeoLocator.find(@search + ", UK")
 
     if @origin.lat == nil
@@ -12,8 +13,10 @@ class SitesController < ApplicationController
       :origin => [@origin.lat, @origin.lng], 
       :within => 25, 
       :order=>'distance asc',
-      :limit => 20
+      :limit => 100
     )
+    
+    @sites.delete_if { |s| s.facilities.public.empty? } if params[:public]
   end
   
   def show
