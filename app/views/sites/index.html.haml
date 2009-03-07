@@ -1,18 +1,18 @@
 - content_for :head do
   :javascript
     $(function() { new Map("main-map", {
-        mapCenter: [#{@position.lat}, #{@position.lng}],
+        mapCenter: [#{@origin.lat}, #{@origin.lng}],
         locations: #{@sites.to_json} 
        });
      });
 
 #mapping
   %form.search{:action => "#"}
-    %input{:type => "text", :size => "60", :name => "origin", :value => @origin}
+    %input{:type => "text", :size => "60", :name => "search", :value => @search}
     %input{:type => "submit", :value => "Take me there!"}
   #main-map
 
 - content_for :secondary do
   %ul#locations
     - @sites.each do |site|
-      %li= link_to site.name, location
+      %li= link_to site.title, site

@@ -1,0 +1,90 @@
+body
+  :font .8em/1.5em Helvetica, Arial, sans-serif
+
+h1
+  :font-size 200%
+  :margin 1em 0 0.5em 0
+
+h2
+  :font-size 150%
+  :margin 1em 0 0.5em 0
+
+h3
+  :font-size 130%
+  :margin 1em 0 0.5em 0
+
+p
+  :margin-bottom 1em
+
+!page_width = 950px
+!secondary  = 200px
+!padding    = 10px
+!secondary_width = !secondary - (!padding * 2)
+!main_width      = (!page_width - !secondary) - (!padding * 2)
+
+#page
+  :width = !page_width
+  :margin 0 auto
+
+#navigation
+  :display block
+  :background #eee
+
+  ul
+    :overflow auto
+
+    li
+      :float left
+      :list-style none
+      :margin 5px 5px 10px 0
+
+#notices
+  p.notice
+    :background-color yellow
+
+  p.warning
+    :background-color red
+
+#content
+  :clear both
+  :overflow auto
+
+#main
+  :width = !main_width
+  :float left
+  :padding = !padding
+
+#secondary
+  :width = !secondary_width
+  :float left
+  :padding = !padding
+
+/* Map Boxes
+
+#main-map
+  :margin-top 20px
+  :width = !main_width
+  :height 400px
+
+/* Map summary
+
+.summary
+  :min-height 11em
+  :width 20em
+
+  h1
+    :margin 0
+    :line-height 100%
+
+  p
+    :margin 0
+
+  .category
+    :margin-bottom 0.5em
+
+  .detail
+    :font-weight bold
+    :font-size 110%
+
+  .overview
+    :margin-top 0.5em

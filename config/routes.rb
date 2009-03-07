@@ -1,3 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => "sites"
+  map.resources :sites  
+  map.root :controller => "sites", :member => ["summary"]
 end

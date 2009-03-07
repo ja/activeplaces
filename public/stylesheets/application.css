@@ -1,0 +1,73 @@
+body {
+  font: .8em/1.5em Helvetica, Arial, sans-serif; }
+
+h1 {
+  font-size: 200%;
+  margin: 1em 0 0.5em 0; }
+
+h2 {
+  font-size: 150%;
+  margin: 1em 0 0.5em 0; }
+
+h3 {
+  font-size: 130%;
+  margin: 1em 0 0.5em 0; }
+
+p {
+  margin-bottom: 1em; }
+
+#page {
+  width: 950px;
+  margin: 0 auto; }
+
+#navigation {
+  display: block;
+  background: #eee; }
+  #navigation ul {
+    overflow: auto; }
+    #navigation ul li {
+      float: left;
+      list-style: none;
+      margin: 5px 5px 10px 0; }
+
+#notices p.notice {
+  background-color: yellow; }
+#notices p.warning {
+  background-color: red; }
+
+#content {
+  clear: both;
+  overflow: auto; }
+
+#main {
+  width: 730px;
+  float: left;
+  padding: 10px; }
+
+#secondary {
+  width: 180px;
+  float: left;
+  padding: 10px; }
+
+/* Map Boxes */
+#main-map {
+  margin-top: 20px;
+  width: 730px;
+  height: 400px; }
+
+/* Map summary */
+.summary {
+  min-height: 11em;
+  width: 20em; }
+  .summary h1 {
+    margin: 0;
+    line-height: 100%; }
+  .summary p {
+    margin: 0; }
+  .summary .category {
+    margin-bottom: 0.5em; }
+  .summary .detail {
+    font-weight: bold;
+    font-size: 110%; }
+  .summary .overview {
+    margin-top: 0.5em; }

@@ -1,11 +1,13 @@
 class SitesController < ApplicationController
-  include Geokit::Geocoders
-
   def index
-    @origin = params['origin'] || 'N1 7NB'
-    origin_query =  @origin + "London, UK"
-    @location = MultiGeocoder.geocode(origin_query)
-    @sites = Site.find(:all, :include => "facilities", :origin => origin_query)
+    @search = params['search'] || 'London'
+    @origin = GeoLocator.find(@search + ", UK")
+
+    if @origin.lat == nil
+      @origin = GeoLocator.default
+    end
+    
+    @sites = Site.find(:all, :include => "facilities", :origin => [@origin.lat, @origin.lng], :within => 5, :limit => 20)
   end
   
 end

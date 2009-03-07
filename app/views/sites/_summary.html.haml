@@ -1,0 +1,8 @@
+.summary
+  %h1= h @location.name
+  %p.category= h @location.category.name
+  %p.detail= h @location.phone
+  %p.detail= link_to h(@location.web), @location.web
+  %p.overview
+    = truncate(@location.overview, :length => 115, :omission => '&hellip;')
+    = link_to "read more", @location
