@@ -3,3 +3,4 @@ public/site-details
 log/*
 tmp/*
 .svn
+.DS_Store
