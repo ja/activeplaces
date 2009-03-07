@@ -1,8 +1,7 @@
 .summary
-  %h1= h @location.name
-  %p.category= h @location.category.name
-  %p.detail= h @location.phone
-  %p.detail= link_to h(@location.web), @location.web
-  %p.overview
-    = truncate(@location.overview, :length => 115, :omission => '&hellip;')
-    = link_to "read more", @location
+  %h1= h @site.title
+  %ul
+    - @site.facilities.each do |facility|
+      %li= facility.facility_type.name  
+  %p.detail= h @site.telephone
+  = link_to "more", @site

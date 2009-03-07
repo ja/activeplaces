@@ -15,4 +15,8 @@
 - content_for :secondary do
   %ul#locations
     - @sites.each do |site|
-      %li= link_to site.title, site
+      %li
+        = link_to site.title, site
+        %ul
+          - site.facilities.each do |facility|
+            %li= facility.facility_type.name

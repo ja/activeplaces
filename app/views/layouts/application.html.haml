@@ -12,6 +12,9 @@
     #page
       #header
         %h1= "Active Places"
+      #navigation
+        %ul.primary
+          %li= link_to "Home", root_path
       #content
         #main
           = yield

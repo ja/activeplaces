@@ -8,4 +8,21 @@ class Site < ActiveRecord::Base
   def title
     name.titleize
   end
+  
+  def closest_sites
+    Site.find(:all,
+      :include => "facilities", 
+      :origin => [latitude, longitude], 
+      :within => 25, 
+      :order=>'distance asc',
+      :limit => 5
+    )
+  end
+  # def nearest_sites(radius_in_miles = 2.0, limit = 10)
+  #   Site.find_near(latitude, longitude, radius_in_miles, limit).delete_if { |l| l.id == id }
+  # end
+  
+  def distance_in_miles(d_latitude, d_longitude)
+    Site.distance_in_miles(latitude, longitude, d_latitude, d_longitude)
+  end
 end

@@ -1,0 +1,24 @@
+- content_for :head do
+  :javascript
+    var locations = new Array();
+    locations[0]  = #{@site.to_json};
+    $(function() { 
+      new Map("location-map", {'locations':locations, 'mapZoom': 15, 'mapControl': 'small'});
+    });
+
+- content_for :secondary do
+  %h3 Nearby Sites
+  %ul
+    - @site.closest_sites.each do |site|
+      %li= link_to site.title, site_path(site)
+      
+%h1= @site.title
+
+%h2 Facilities
+%ul
+  - @site.facilities.each do |facility|
+    %li= facility.facility_type.name  
+
+%h3 Details
+%h4 Telephone
+%p= @site.telephone
