@@ -3,7 +3,7 @@ var Map = function(mapContainerId, options) {
   var defaults = {
     locations : [],
     mapCenter : null,
-    mapZoom : 13,
+    mapZoom : 14,
     admin: false
   }
   this.options = $.extend(defaults, options);
