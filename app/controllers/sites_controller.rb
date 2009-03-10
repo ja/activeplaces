@@ -13,7 +13,7 @@ class SitesController < ApplicationController
       :origin => [@origin.lat, @origin.lng], 
       :within => 25, 
       :order=>'distance asc',
-      :limit => 100
+      :limit => 20
     )
     
     @sites.delete_if { |s| s.facilities.public.empty? } if params[:public]

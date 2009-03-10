@@ -11,10 +11,7 @@
   %body
     #page
       #header
-        %h1= "Active Places"
-      #navigation
-        %ul.primary
-          %li= link_to "Home", root_path
+        %h1= link_to "<em>Active</em> Places", root_path
       #content
         #main
           = yield
@@ -22,6 +19,10 @@
           = yield :secondary
       #footer
         %p 
-          Active Places. A 
-          = link_to "rewiredstate.org"
-          project.
+          %em Active 
+          Places.
+          == A #{link_to "rewiredstate.org"} project.
+          == Site hack by #{link_to("James Andrews", "http://jamesandre.ws")},
+          == #{link_to("James Adam", "http://interblah.net")},
+          == #{link_to("Chris Roos", "http://chrisroos.co.uk")} &amp;
+          == #{link_to("Tom Taylor", "http://tomtaylor.co.uk" )}.

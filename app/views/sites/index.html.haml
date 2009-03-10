@@ -6,13 +6,25 @@
        });
      });
 
+#banner
+  %p
+    Thanks for visiting Active Places. This is a project worked on for
+    = link_to "Rewired State", "http://rewiredstate.org" 
+    hack the government day. You can 
+    = link_to "read more about our project", "http://projects.rewiredstate.org/projects/active-places-reloaded"
+    or
+    = link_to "check out some of the other great projects", "http://projects.rewiredstate.org/"
+    \. This site takes content from
+    = link_to "http://activeplaces.com"
+    and provides a simple search interface. 
 #mapping
   %form.search{:action => "#"}
     %input{:type => "text", :size => "60", :name => "search", :value => @search}
     %input{:type => "checkbox", :name => "public", :checked => @public, :value => 'true'}
     %label{:for => "public"}
-      Public only
-    %input{:type => "submit", :value => "Take me there!"}
+      Public facilities only
+    %input{:type => "submit", :value => "Locate"}
+  %p Just enter your location (address, town/city or postcode) within the UK and we can tell you what sporting facilities are available nearby.
   #main-map
 
 - content_for :secondary do

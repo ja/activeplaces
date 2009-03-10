@@ -1,43 +1,66 @@
-body
-  :font .8em/1.5em Helvetica, Arial, sans-serif
-
-h1
-  :font-size 200%
-  :margin 1em 0 0.5em 0
-
-h2
-  :font-size 150%
-  :margin 1em 0 0.5em 0
-
-h3
-  :font-size 130%
-  :margin 1em 0 0.5em 0
-
-p
-  :margin-bottom 1em
-
+/ Dimensions
 !page_width = 950px
 !secondary  = 200px
 !padding    = 10px
 !secondary_width = !secondary - (!padding * 2)
 !main_width      = (!page_width - !secondary) - (!padding * 2)
 
+/Colors
+!headline = #3b6d7b
+!main = #009cc7
+!bright = #c7009c
+!brighter = #e300b3
+!restful = #9cc700
+!subdued = #77940f
+!morose = #627b06
+
+body
+  :font .8em/1.5em Helvetica, Arial, sans-serif
+
+h1
+  :color = !headline
+  :font-size 300%
+  :margin 1em 0 0.5em 0
+  :letter-spacing 0.1em
+  em
+    :-webkit-text-fill-color transparent
+    :-webkit-text-stroke 2px
+  
+h2
+  :color = !headline
+  :font-size 150%
+  :margin 1em 0 0.5em 0
+
+h3
+  :color = !subdued
+  :font-size 130%
+  :margin 1em 0 0.5em 0
+
+h4
+  :color = !bright
+  :font-size 120%
+  :margin 1em 0 0.5em 0
+
+p
+  :margin-bottom 1em
+
+a
+  :color = !headline
+
+  &:hover
+    :color = !restful
+  
 #page
   :width = !page_width
   :margin 0 auto
 
-#navigation
-  :display block
-  :background #eee
+#header
+  :margin-left = !padding
 
-  ul
-    :overflow auto
-
-    li
-      :float left
-      :list-style none
-      :margin 5px 5px 10px 0
-
+  h1
+    a
+      :text-decoration none
+    
 #notices
   p.notice
     :background-color yellow
@@ -59,32 +82,103 @@ p
   :float left
   :padding = !padding
 
+#mapping
+  :color #fff
+  :background = !subdued
+  :padding = !padding * 1.5
+  :-webkit-border-bottom-left-radius 15px
+  :-webkit-border-bottom-right-radius 15px
+  
+  input
+    :font-size 110%
+    :border 1px solid 
+    :border-color = !morose
+    
+  input[type='text']
+    :height 1.1em
+    :width 350px
+    :padding 3px
+    
+  input[type='submit']
+    :color #fff
+    :background = !restful
+    &:hover
+      :background = !morose
+
+#banner
+  :color = #fff
+  :background = !bright
+  :padding = !padding
+  :margin-bottom = !padding
+  :-webkit-border-radius 15px
+  :text-shadow 0 0 2px #fff
+  a
+    :color #fff
+  
 /* Map Boxes
 
 #main-map
   :margin-top 20px
-  :width = !main_width
-  :height 400px
+  :width = !main_width - (3 * !padding + 2)
+  :height 500px
+  :border 1px solid = !morose
 
 /* Map summary
 
 .summary
-  :min-height 11em
-  :width 20em
+  :min-height 8em
+  :width 18em
 
-  h1
+  h3
     :margin 0
     :line-height 100%
 
   p
+    :color black
     :margin 0
 
-  .category
-    :margin-bottom 0.5em
-
+  ul li
+    :color black
   .detail
     :font-weight bold
     :font-size 110%
 
   .overview
     :margin-top 0.5em
+
+/* Side boxes
+
+ul#locations
+  :padding 0
+  :margin 0
+
+  li    
+    :background = !restful
+    :margin-bottom 5px
+    :-webkit-border-radius 5px
+
+    a
+      :-webkit-border-radius 5px
+      :background = !subdued
+      :display block
+      :color #fff
+      :text-decoration none
+      :padding 3px 5px
+      :text-align center
+ 
+      &:hover
+        :background = !morose
+        
+  ul
+    :margin-top 5px
+    :padding-bottom 5px    
+    
+    li
+      :margin-bottom 0
+      :color = !morose
+      :font-size 80%
+      :padding 3px 5px
+      :line-height 85%
+
+#footer
+  :color = !headline

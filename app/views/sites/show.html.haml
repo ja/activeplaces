@@ -7,15 +7,19 @@
     });
 
 - content_for :secondary do
-  %h3 Nearby Sites
-  %ul
+  %h4 Nearby Sites
+  %ul#locations
     - @site.closest_sites.each do |site|
-      %li= link_to site.title, site_path(site)
-      
-%h1= @site.title
+      %li
+        = link_to site.title, site_path(site)
+        %ul
+          - site.facilities.each do |facility|
+            %li= facility.facility_type.name      
+
+%h2= @site.title
 
 - if @site.facilities.public.any?
-  %h2 Public Facilities
+  %h3 Public Facilities
   %ul
     - @site.facilities.public.each do |facility|
       %li
@@ -24,7 +28,7 @@
           == (#{facility.facility_sub_type.name})
 
 - if @site.facilities.private.any?
-  %h2 Private Facilities
+  %h3 Private Facilities
   %ul
     - @site.facilities.private.each do |facility|
       %li
