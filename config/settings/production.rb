@@ -1,0 +1,3 @@
+SimpleConfig.for :application do
+  set :google_maps_api_key, 'ABQIAAAA0RJdudJnquAtPOyhG9teqRQOikQJ82Aotb7YG1fD5fVwyDseihS5e2uE0u9tjmfDDKoOvUu5_MfkAw'
+end
