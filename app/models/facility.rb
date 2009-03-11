@@ -7,4 +7,12 @@ class Facility < ActiveRecord::Base
   
   named_scope :public, { :conditions => 'public = true' }
   named_scope :private, { :conditions => 'public <> true' }
+  
+  class << self
+
+    def access_types
+      ["public", "private"]
+    end
+    
+  end
 end

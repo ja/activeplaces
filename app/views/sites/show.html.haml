@@ -22,7 +22,7 @@
 
 #secondary-map
 
-- ["public", "private"].each do |type|
+- Facility.access_types.each do |type|
   - if @site.facilities.send(type).any?
     %h3== #{type.titleize} Facilities
     %ul
