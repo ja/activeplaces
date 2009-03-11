@@ -4,7 +4,7 @@ class GeoLocator
   end
 
   def self.default
-    DummyLocation.new(51.518250335096376, -0.12273788452148438)
+    DummyLocation.new(51.51497,-0.14373)
   end
   
   class DummyLocation

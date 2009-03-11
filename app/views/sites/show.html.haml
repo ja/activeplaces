@@ -20,7 +20,8 @@
 
 %h2= @site.title
 
-#secondary-map
+#secondary-mapping
+  #secondary-map.map-box
 
 - Facility.access_types.each do |type|
   - if @site.facilities.send(type).any?
@@ -35,4 +36,7 @@
 %h3 Details
 %h4 Telephone
 %p= @site.telephone
-
+%h4 Location
+%p= @site.address
+%h4 Postcode
+%p= @site.postcode

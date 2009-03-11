@@ -82,8 +82,16 @@ a
   :float left
   :padding = !padding
 
+  h4
+    :color white
+    :background = !bright
+    :-webkit-border-radius 5px
+    :-moz-border-radius 5px
+    :text-align center
+    :font-weight 500
+  
 #mapping
-  :color #fff
+  :color white
   :background = !subdued
   :padding = !padding * 1.5
   :-webkit-border-bottom-left-radius 15px
@@ -102,21 +110,28 @@ a
     :padding 3px
     
   input[type='submit']
-    :color #fff
+    :color white
     :background = !restful
     &:hover
       :background = !morose
 
+#secondary-mapping
+  :float right
+  :background = !subdued
+  :padding = !padding * 1
+  :-webkit-border-radius 10px
+  :-moz-border-radius 10px
+
 #banner
-  :color = #fff
+  :color = white
   :background = !bright
   :padding = !padding
   :margin-bottom = !padding
   :-webkit-border-radius 15px
   :-moz-border-radius 15px
-  :text-shadow 0 0 2px #fff
+  :text-shadow 0 0 2px white
   a
-    :color #fff
+    :color white
   
 /* Map Boxes
 
@@ -124,20 +139,21 @@ a
   :margin-top 20px
   :width = !main_width - (3 * !padding + 2)
   :height 500px
-  :border 1px solid = !morose
 
 #secondary-map
-  :top 1em
-  :right 1em
-  :height 250px
   :width 250px
-  :border 1px solid = !morose
+  :height 250px
+  :float right
+
+.map-box
+  :border 1px solid 
+  :border-color = !morose
 
 /* Map summary
 
 .summary
   :min-height 8em
-  :width 18em
+  :width 19em
 
   h3
     :margin 0
@@ -173,14 +189,14 @@ ul#locations
       :-moz-border-radius 5px
       :background = !subdued
       :display block
-      :color #fff
+      :color white
       :text-decoration none
       :padding 3px 5px
       :text-align center
  
       &:hover
         :background = !morose
-        
+
   ul
     :margin-top 5px
     :padding-bottom 5px    
