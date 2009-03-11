@@ -1,10 +1,12 @@
 - content_for :head do
   :javascript
-    var locations = new Array();
-    locations[0]  = #{@site.to_json};
-    $(function() { 
-      new Map("location-map", {'locations':locations, 'mapZoom': 15, 'mapControl': 'small'});
+    $(function() { new Map("secondary-map", {
+        mapZoom   : 15,
+        mapControl: 'small',
+        locations : [#{@site.to_json}]
+      });
     });
+  
 
 - content_for :secondary do
   %h4 Nearby Sites
@@ -17,6 +19,8 @@
             %li= facility.facility_type.name      
 
 %h2= @site.title
+
+#secondary-map
 
 - if @site.facilities.public.any?
   %h3 Public Facilities
@@ -40,3 +44,4 @@
 %h3 Details
 %h4 Telephone
 %p= @site.telephone
+

@@ -88,6 +88,8 @@ a
   :padding = !padding * 1.5
   :-webkit-border-bottom-left-radius 15px
   :-webkit-border-bottom-right-radius 15px
+  :-moz-border-radius-bottomleft 15px
+  :-moz-border-radius-bottomright 15px
   
   input
     :font-size 110%
@@ -111,6 +113,7 @@ a
   :padding = !padding
   :margin-bottom = !padding
   :-webkit-border-radius 15px
+  :-moz-border-radius 15px
   :text-shadow 0 0 2px #fff
   a
     :color #fff
@@ -121,6 +124,13 @@ a
   :margin-top 20px
   :width = !main_width - (3 * !padding + 2)
   :height 500px
+  :border 1px solid = !morose
+
+#secondary-map
+  :top 1em
+  :right 1em
+  :height 250px
+  :width 250px
   :border 1px solid = !morose
 
 /* Map summary
@@ -156,9 +166,11 @@ ul#locations
     :background = !restful
     :margin-bottom 5px
     :-webkit-border-radius 5px
+    :-moz-border-radius 5px
 
     a
       :-webkit-border-radius 5px
+      :-moz-border-radius 5px
       :background = !subdued
       :display block
       :color #fff
