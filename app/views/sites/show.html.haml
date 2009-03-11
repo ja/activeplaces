@@ -22,24 +22,15 @@
 
 #secondary-map
 
-- if @site.facilities.public.any?
-  %h3 Public Facilities
-  %ul
-    - @site.facilities.public.each do |facility|
-      %li
-        = facility.facility_type.name
-        - if facility.facility_sub_type
-          == (#{facility.facility_sub_type.name})
-
-- if @site.facilities.private.any?
-  %h3 Private Facilities
-  %ul
-    - @site.facilities.private.each do |facility|
-      %li
-        = facility.facility_type.name
-        - if facility.facility_sub_type
-          == (#{facility.facility_sub_type.name})
-      
+- ["public", "private"].each do |type|
+  - if @site.facilities.send(type).any?
+    %h3== #{type.titleize} Facilities
+    %ul
+      - @site.facilities.send(type).each do |facility|
+        %li
+          = facility.facility_type.name
+          - if facility.facility_sub_type
+            == (#{facility.facility_sub_type.name})
 
 %h3 Details
 %h4 Telephone
